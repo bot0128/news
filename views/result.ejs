@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Search Results</h1>
+  <div class="articles">
+    <% if (articles && articles.length > 0) { %>
+      <% articles.forEach(article => { %>
+        <div class="article">
+          <h2><%= article.title %></h2>
+          <p><%= article.description %></p>
+          <p>Source: <%= article.source.name %></p>
+          <p>Published At: <%= article.publishedAt %></p>
+          <a href="<%= article.url %>">Read More</a>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>No articles found</p>
+    <% } %>
+  </div>
+</body>
+</html>
